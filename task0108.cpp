@@ -12,7 +12,6 @@ int main(int argc, const char *argv[])
     cout << "Enter y:";
     cin >> y;
 
-    float PI = 3.14159265358979323846;
     float z1 = pow(cos(x), 4.0) + pow(sin(y), 2.0) + 1.0/4.0*pow(sin(2*x), 2.0) - 1;
     float z2 = sin(x+y) * sin(y-x);
 

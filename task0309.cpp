@@ -8,7 +8,6 @@ int main(int argc, const char *argv[])
 {
     const int iter_max = 500;
     const double eps = 0.00000001;
-    const double PI = 3.14159265358979323846;
     double x;
 
     cout << "Enter X: ";

@@ -11,12 +11,12 @@ int main(int argc, const char *argv[])
     int i = 0;
     double x;
 
-    cout << "Enter X:";
+    cout << "Enter X: ";
     cin >> x;
 
     double val = 1;
     double y = val; 
-    while (i < 500 && fabs(val) >= eps) {
+    while (i < iter_max && fabs(val) >= eps) {
         val *= -1.0 * x / (i + 1);
         y += val;
         i++;
