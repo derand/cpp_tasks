@@ -10,7 +10,7 @@ int main(int argc, const char *argv[])
     double arr[n] = { 1.0, 5.0, -3.0, 4.0, -2.5, 3.0, 2.5, 1.7, 8, 2.0};
     int i = 0;
 
-    // Enter array from kayboard
+    // Enter array from keyboard
     //for (; i<n; i++) {
     //    cout << "Enter X[" << i << "]: ";
     //    cin >> arr[i];

@@ -21,42 +21,42 @@ int main(int argc, const char *argv[])
     }
     cout << '\n';
 
-    double sum = 0;
     double composition = 1;
+    int max_el_idx = 0;
     int min_idx, max_idx;
 
     min_idx = max_idx = -1;
 
     for (i=0; i<n; i++) {
-        if (i%2 == 0) {
-            composition *= arr[i];
+        if (arr[i] > arr[max_el_idx]) {
+            max_el_idx = i;
         }
 
-        if (arr[i] == 0) {
+        if (arr[i] == 0 && max_idx == -1) {
             if (min_idx == -1) {
                 min_idx = i;
             }
-            max_idx = i;
+            else {
+                max_idx = i;
+            }
         } 
     }
 
     cout << "idx " << min_idx << ".." << max_idx << '\n';
 
-    for (i=min_idx; i<max_idx; i++) {
-        sum += arr[i];
+    for (i=min_idx+1; i<max_idx; i++) {
+        composition *= arr[i];
     }
-    cout << "Sum = " << sum << '\n';
     cout << "Composition = " << composition << '\n';
+    cout << "Max element index = " << max_el_idx << '\n';
 
     // sort
     int j;
-    for (i=0; i<(n-1); i++) {
-        for (j=i+1; j<n; j++) {
-            if (arr[i] < arr[j]) {
-                double tmp = arr[i];
-                arr[i] = arr[j];
-                arr[j] = tmp;
-            }
+    for (i=0; i<n/2; i++) {
+        if (i%2 == 1) {
+            double tmp = arr[i];
+            arr[i] = arr[i+n/2];
+            arr[i+n/2] = tmp;
         }
     }
 
